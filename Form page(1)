@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta charset "utf-8">
+		<title>Форма для заполнения</title>
+		<style type="text/css">
+			textarea { width: 250px; hight: 150px; background: rgb(154, 105, 186); border: 1px solid #cecece; botder-radius: 8px 0 8px 10px;}
+			.button{ backbround-color: rgb (0,0,0); background: rgb (150, 150, 150)}
+		</style>
+	</head>
+	<body style= "background-color: rgb(255, 191, 255);">
+	<form>
+		<h1 align="center">Тут должно быть название, но мне лень</h1>
+		<h2 align="center">Ну раз уж ты здесь, то ответь на несколько вопросов</h2>
+		<center><pre>Введи своё имя <input type="text" method="post" placeholder="Вводить сюда"></pre>
+		<pre>Ну в целом как он? <input type="text" method="post" placeholder="Ну не линись!"></pre>
+		<pre>Оцени настроение по шкале от одного до десяти<input type="number" method="post" min="0" max='12' placeholder="12/10"></pre>
+		<pre>Ну теперь выбери что-то из предложенных вариантов <select><option selected value="s1">Код</option><option value="s2">Железо</option><option value="s3">Мемасеки</option></select></pre>
+		<p>В какой день не учишься?</p><br>
+		<p><input name="res" type="radio" value="mo"> Понедельник</p>
+		<p><input name="res" type="radio" value="tu"> Вторник</p>
+		<p><input name="res" type="radio" value="we"> Среда</p>
+		<p><input name="res" type="radio" value="th"> Четверг</p>
+		<p><input name="res" type="radio" value="fr"> Пятница</p>
+		<p><input name="res" type="radio" value="sa"> Суббота</p>
+
+		<p>И как оно? В этот день сидеть дома?</p><br>
+		<input type="checkbox" name="a" value="bad"> Плохо</p>
+		<p><input type="checkbox" name="a" value="casual"> Нормально</p>
+		<p><input type="checkbox" name="a" value="exciting"> Супер</p>
+		<p><input type="checkbox" name="a" value="so-so">Сложно</p>
+
+
+		<pre>Ок.Расскажи хоть, что сегодня делал: <textarea></textarea></pre>
+		<pre>Ну вот тебе классная картинка:<br><img src="https://mocah.org/uploads/posts/357002-4k-wallpaper.jpg" width="860" height="445"  hspace="5" alt="img4"></pre>
+
+		<input type="submit" value="Отправить" class="button"></center>
+	</form>
+	</body>
+</html>
