@@ -86,10 +86,10 @@ function sum(array){
     }
     return console.log(summ)
 }
-lengthArray = promt('Введите длину диапазона: ', 0)
+lengthArray = prompt('Введите длину диапазона: ', 0)
 let arry = new Array()
 for(let i = 0; i <= lengthArray; i++){
-    array.push(promt(`Введите элемент массива под номером: ${i}`, 0))
+    array.push(prompt(`Введите элемент массива под номером: ${i}`, 0))
 }
 sum(array)
 
