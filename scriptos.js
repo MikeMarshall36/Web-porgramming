@@ -84,11 +84,11 @@ function range(left, right){
 range(prompt('Введите начало диапазона: ', 0), prompt('Введите конец диапазона: ', 0))
 
 function sum(array){
-    let summ = new Array();
+    let summ = 0;
     for(let i = 0; i<= array.length-1; i++){
-        summ.push(Number(array[i]));
+        summ = summ + Number(array[i])
     }
-    return console.log(summ)
+    return console.log('Результат: ',summ)
 }
 lengthArray = prompt('Введите длину диапазона: ', 0)
 let arry = new Array()
