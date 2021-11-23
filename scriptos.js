@@ -70,8 +70,6 @@ countChar(userText_1, userLetter)
 
 //Задача №6
 
-let First_array = new Array (0,1,2,3,4,5)
-
 function range(left, right){
     left = Number(left)
     right = Number(right)
@@ -88,7 +86,7 @@ function sum(array){
     for(let i = 0; i<= array.length-1; i++){
         summ = summ + Number(array[i])
     }
-    return console.log('Результат: ',summ)
+    return document.write(`<p> Результат: ${summ} </p>`)
 }
 lengthArray = prompt('Введите длину диапазона: ', 0)
 let arry = new Array()
@@ -124,11 +122,47 @@ reversArrayInPlace(arry)
  function arrayToList(array){
      let list = {};
      for (let i = 0; i<array.length; i++){
-         list = {
-             value: Number(array[i]), rest: list
-            };
+         list = {value: Number(array[i]), rest: list};
      }
      return list
  }
 
 console.log(arrayToList(arry))
+
+function listToArray(list){
+    Array_out = new Array()
+    for (let i = list.length >>>0; i--;){
+        Array_out[i] = list[i];
+    }
+    return console.log(Array_out)
+}
+
+listToArray(arrayToList(arry))
+
+//Задача №9
+
+function deepEqual(num_1, num_2){
+    if(typeof(num_1)=="object" & typeof(num_2) == "object"){
+        if(JSON.stringify(num_1)=== JSON.stringify(num_2)){
+            return console.log(true)
+        }
+        else{
+            return console.log(false)
+        }
+    }
+    else{
+        if(num_1 == num_2){
+            return console.log(true)
+        }
+        else{
+            return console.log(false)
+        }
+    }
+}
+
+array_1 = new Array([2,4,6,8,10])
+array_2 = new Array([2,4,5,7,10])
+array_3 = new Array([2,4,6,8,10])
+
+deepEqual(array_1, array_2)
+deepEqual(array_1, array_3)
