@@ -120,9 +120,9 @@ reversArrayInPlace(arry)
 
 //Задача №8
  function arrayToList(array){
-     let list = {};
+     let list = null;
      for (let i = 0; i<array.length; i++){
-         list = {value: Number(array[i]), rest: list};
+         list = ({value: Number(array[i]), rest: list});
      }
      return list
  }
@@ -130,14 +130,27 @@ reversArrayInPlace(arry)
 console.log(arrayToList(arry))
 
 function listToArray(list){
-    Array_out = new Array()
-    for (let i = list.length >>>0; i--;){
-        Array_out[i] = list[i];
+    let f_array = [list.value]
+    while(list.rest !== null){
+        list = list.rest;
+        f_array.push(list.value)
     }
-    return console.log(Array_out)
+    return f_array
+}
+console.log(listToArray(arrayToList(arry)))
+
+function prepend(list, num){
+    list = ({value:num, rest: list})
+    return list
 }
 
-listToArray(arrayToList(arry))
+console.log(prepend(arrayToList(arry),9))
+
+function nth(list, position){
+    
+}
+
+console.log(nth(arrayToList(arry),2))
 
 //Задача №9
 
