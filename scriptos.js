@@ -147,10 +147,21 @@ function prepend(list, num){
 console.log(prepend(arrayToList(arry),9))
 
 function nth(list, position){
-    
+    if (list){
+        if (position != 0){
+
+            return nth(list['rest'], position--);
+        } 
+        else{
+            return list['value'];
+        }
+    } 
+    else{
+        return undefined
+    }
 }
 
-console.log(nth(arrayToList(arry),2))
+console.log(nth(arrayToList(arry), 0))
 
 //Задача №9
 
@@ -173,9 +184,112 @@ function deepEqual(num_1, num_2){
     }
 }
 
-array_1 = new Array([2,4,6,8,10])
-array_2 = new Array([2,4,5,7,10])
-array_3 = new Array([2,4,6,8,10])
+array_1 = [2,4,6,8,10]
+array_2 = [2,4,5,7,10]
+array_3 = [2,4,6,8,10]
 
 deepEqual(array_1, array_2)
 deepEqual(array_1, array_3)
+
+//Задача №10
+
+let mainArray = [arry, array_1, array_2, array_3]
+let result_array = mainArray.reduce(function(array, sub_array){
+    return array.concat(sub_array);
+});
+
+console.log(result_array)
+
+//Задача №11
+
+var data = JSON.parse(ANCESTRY_FILE);
+
+let f_counter = 0;
+let s_counter = 0;
+let ageDifference = [];
+
+while(f_counter != data.length){
+    while(s_counter != data.length){
+        if(data[f_counter].mother == null){
+            break;
+        }
+        else{
+            if(data[f_counter].mother == data[s_counter].name){
+                ageDifference.push(data[f_counter].born - data[s_counter].born);
+                break;
+            }
+        }
+        s_counter++;
+    }
+    f_counter++;
+    s_counter = 0;
+}
+f_counter = 0;
+
+let summ = 0;
+let quantity = ageDifference.length;
+while(f_counter != ageDifference.length){
+    summ += ageDifference[f_counter]
+    f_counter++
+}
+f_counter = 0;
+console.log(summ / ageDifference.length);
+
+//Задача №12
+
+var data = JSON.parse(ANCESTRY_FILE);
+
+
+function average(array) {
+    function plus(a, b) { return a + b; }
+    return array.reduce(plus) / array.length;
+}
+
+function groupBy(arr, func){ 
+    let grouped_list = {};
+    arr.forEach(function(p){
+        let id = func(p);
+        if ( grouped_list[id] === undefined ) {
+            grouped_list[id] = [];
+        }
+        grouped_list[id].push( p )
+    });
+    return grouped_list;
+}
+
+function getCentury(p) {
+    return Math.ceil(p.died / 100);
+}
+
+let byCenturies = groupBy( data, getCentury );
+
+for ( century in byCenturies ) {
+    byCenturies[century] = average( byCenturies[century].map(function(p){ return p.died - p.born }) );
+    console.log( century + ": " + byCenturies[century] );
+}
+
+//Задача №13
+
+function every_function(array, func) {
+    for (var i = 0; i < array.length; i++) {
+        if (!func(array[i])) {
+            return false
+        }
+    }
+    return true;
+};
+
+function some_function(array, func) {
+    for (var i = 0; i < array.length; i++) {
+        if (func(array[i])) {
+            return true
+        }
+    }
+    return false;
+};
+
+
+console.log(every_function([NaN, NaN, NaN], isNaN));
+console.log(every_function([NaN, NaN, 8, 'Num'], isNaN));
+console.log(some_function([0, 9, NaN], isNaN));
+console.log(some_function([11, 21, 31], isNaN));
