@@ -59,28 +59,27 @@ function sortByHeight(array) {
     });
 }
 
+ask_data = prompt('Укажите число от 0-9: ',0)
+
 console.log(humans);
-console.log(humans[0].getInfo());
-console.log(humans[9].firstName());
+console.log(humans[ask_data].getInfo());
+console.log(humans[ask_data].firstName());
 console.log(sortByHeight(humans));
 
-//18 - 20
+//18
+dt1 = new Date(2045, 0, 1, 0, 0, 0);
+console.log(dt1);
 
-date1 = new Date(2042, 6, 1, 22, 3, 0);
+//19
+dt2 = Date.now() / 1000;
+console.log(`it is ${dt2} sec. since 1970`);
 
-date2 = Date.now() / 1000;
-
+//20
 function getDays(yyyy, mm) {
     return new Date(yyyy,mm,0).getDate();
 }
 
-console.log(date1);
-
-console.log(date2 + ' s');
-
 console.log(getDays(2002, 01) + ' days in month');
-console.log(getDays(2103, 02) + ' days in month');
 console.log(getDays(2009, 05) + ' days in month');
 console.log(getDays(2077, 08) + ' days in month');
-
 
