@@ -1,58 +1,3 @@
-//Задание №1
-/*
-let City1 = {
-    name : 'ГородN',
-    population : 10000000
-};
-
-console.log(`Задача №1: ${City1.name, City1.population}`)
-
-//Задание №2
-let City2 = {name : 'ГородM', population : 1e6};
-
-//Задание №3
-City1.getName = function (){
-    console.log(`Название города: ${City1.name}`)
-}
-
-City2.getName = function (){
-    console.log(`Название города: ${City2.name}`)
-}
-City1.getName()
-City2.getName()
-
-delete City1.getName
-delete City2.getName
-
-//Задание №4
-City1.exportStr = function(key){
-    for (key in City1){
-        console.log(key,City1[key]);
-        delete City1.exportStr
-    }
-}
-
-City2.exportStr = function(key){
-    for (key in City2){
-        console.log(key,City2[key]);
-        delete City2.exportStr
-    }
-}
-
-City1.exportStr()
-City2.exportStr()
-
-//Задание №5
-function getObj () { return this }
- 
-City1.getCity = getObj;
-City2.getCity = getObj;
- 
-console.log(City1.getCity().name + ' ' + City1.getCity().population);
-console.log(City2.getCity().name + ' ' + City2.getCity().population);
-
-*/
-
 class Card{
     constructor(from, to){
         this.from = from,
@@ -91,9 +36,9 @@ humans =[
     new Human('Ваня',18,192),
     new Human('Петя',45,178),
     new Human('Вася',34,197),
-    new Human('Джони',37,160),
+    new Human('Джони',40,168),
     new Human('Катя',37,160),
-    new Human('Петя',37,160),
+    new Human('Петя',29,200),
     new Human('Соня', 21,172),
     new Human('Женя',25,175)
 ]
